@@ -643,3 +643,115 @@ TypeError: ModbusClientMixin.read_holding_registers() got an unexpected keyword 
 2025-04-03 13:47:18,618 - __main__ - INFO - Modbus connection closed
 2025-04-03 13:47:18,813 - __main__ - INFO - Disconnected from MQTT broker (clean)
 2025-04-03 13:47:18,813 - __main__ - INFO - MQTT connection closed
+2025-04-03 13:48:50,092 - __main__ - INFO - Connected to Modbus device at 192.168.1.100:502
+2025-04-03 13:48:50,092 - __main__ - INFO - Attempting to connect to MQTT broker at 35.169.3.101:1884
+2025-04-03 13:48:50,230 - __main__ - INFO - MQTT connection initiated
+2025-04-03 13:48:50,230 - __main__ - INFO - Starting loop 1
+2025-04-03 13:48:50,231 - __main__ - INFO - Attempting to reconnect to MQTT broker...
+2025-04-03 13:48:50,366 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: False
+2025-04-03 13:48:50,384 - __main__ - WARNING - MQTT client not connected, cannot publish
+2025-04-03 13:48:50,385 - __main__ - INFO - Loop 1 done
+2025-04-03 13:48:50,501 - __main__ - INFO - Connected to MQTT broker at 35.169.3.101:1884
+2025-04-03 13:49:00,230 - __main__ - INFO - Starting loop 2
+2025-04-03 13:49:00,383 - __main__ - INFO - Loop 2 done
+2025-04-03 13:49:10,230 - __main__ - INFO - Starting loop 3
+2025-04-03 13:49:10,610 - __main__ - INFO - Loop 3 done
+2025-04-03 13:49:20,231 - __main__ - INFO - Starting loop 4
+2025-04-03 13:49:20,385 - __main__ - INFO - Loop 4 done
+2025-04-03 13:49:30,231 - __main__ - INFO - Starting loop 5
+2025-04-03 13:49:30,382 - __main__ - INFO - Loop 5 done
+2025-04-03 13:49:40,231 - __main__ - INFO - Starting loop 6
+2025-04-03 13:49:40,408 - __main__ - INFO - Loop 6 done
+2025-04-03 13:49:50,231 - __main__ - INFO - Starting loop 7
+2025-04-03 13:49:50,387 - __main__ - INFO - Loop 7 done
+2025-04-03 13:50:00,231 - __main__ - INFO - Starting loop 8
+2025-04-03 13:50:00,231 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:50:00,382 - __main__ - INFO - Loop 8 done
+2025-04-03 13:50:10,231 - __main__ - INFO - Starting loop 9
+2025-04-03 13:50:10,411 - __main__ - INFO - Loop 9 done
+2025-04-03 13:50:20,231 - __main__ - INFO - Starting loop 10
+2025-04-03 13:50:20,385 - __main__ - INFO - Loop 10 done
+2025-04-03 13:50:30,231 - __main__ - INFO - Starting loop 11
+2025-04-03 13:50:30,385 - __main__ - INFO - Loop 11 done
+2025-04-03 13:50:40,232 - __main__ - INFO - Starting loop 12
+2025-04-03 13:50:40,415 - __main__ - INFO - Loop 12 done
+2025-04-03 13:50:50,232 - __main__ - INFO - Starting loop 13
+2025-04-03 13:50:50,386 - __main__ - INFO - Loop 13 done
+2025-04-03 13:51:00,232 - __main__ - INFO - Starting loop 14
+2025-04-03 13:51:00,232 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:51:00,387 - __main__ - INFO - Loop 14 done
+2025-04-03 13:51:10,232 - __main__ - INFO - Starting loop 15
+2025-04-03 13:51:10,417 - __main__ - INFO - Loop 15 done
+2025-04-03 13:51:20,232 - __main__ - INFO - Starting loop 16
+2025-04-03 13:51:20,388 - __main__ - INFO - Loop 16 done
+2025-04-03 13:51:30,232 - __main__ - INFO - Starting loop 17
+2025-04-03 13:51:30,393 - __main__ - INFO - Loop 17 done
+2025-04-03 13:51:40,233 - __main__ - INFO - Starting loop 18
+2025-04-03 13:51:40,421 - __main__ - INFO - Loop 18 done
+2025-04-03 13:51:50,233 - __main__ - INFO - Starting loop 19
+2025-04-03 13:51:50,393 - __main__ - INFO - Loop 19 done
+2025-04-03 13:52:00,233 - __main__ - INFO - Starting loop 20
+2025-04-03 13:52:00,233 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:52:00,396 - __main__ - INFO - Loop 20 done
+2025-04-03 13:52:10,233 - __main__ - INFO - Starting loop 21
+2025-04-03 13:52:10,425 - __main__ - INFO - Loop 21 done
+2025-04-03 13:52:20,233 - __main__ - INFO - Starting loop 22
+2025-04-03 13:52:20,388 - __main__ - INFO - Loop 22 done
+2025-04-03 13:52:30,233 - __main__ - INFO - Starting loop 23
+2025-04-03 13:52:30,386 - __main__ - INFO - Loop 23 done
+2025-04-03 13:52:40,233 - __main__ - INFO - Starting loop 24
+2025-04-03 13:52:40,427 - __main__ - INFO - Loop 24 done
+2025-04-03 13:52:50,234 - __main__ - INFO - Starting loop 25
+2025-04-03 13:52:50,385 - __main__ - INFO - Loop 25 done
+2025-04-03 13:53:00,234 - __main__ - INFO - Starting loop 26
+2025-04-03 13:53:00,234 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:53:00,389 - __main__ - INFO - Loop 26 done
+2025-04-03 13:53:10,234 - __main__ - INFO - Starting loop 27
+2025-04-03 13:53:10,431 - __main__ - INFO - Loop 27 done
+2025-04-03 13:53:20,234 - __main__ - INFO - Starting loop 28
+2025-04-03 13:53:20,403 - __main__ - INFO - Loop 28 done
+2025-04-03 13:53:30,234 - __main__ - INFO - Starting loop 29
+2025-04-03 13:53:30,385 - __main__ - INFO - Loop 29 done
+2025-04-03 13:53:40,234 - __main__ - INFO - Starting loop 30
+2025-04-03 13:53:40,430 - __main__ - INFO - Loop 30 done
+2025-04-03 13:53:50,234 - __main__ - INFO - Starting loop 31
+2025-04-03 13:53:50,385 - __main__ - INFO - Loop 31 done
+2025-04-03 13:54:00,235 - __main__ - INFO - Starting loop 32
+2025-04-03 13:54:00,235 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:54:00,390 - __main__ - INFO - Loop 32 done
+2025-04-03 13:54:10,235 - __main__ - INFO - Starting loop 33
+2025-04-03 13:54:10,436 - __main__ - INFO - Loop 33 done
+2025-04-03 13:54:20,235 - __main__ - INFO - Starting loop 34
+2025-04-03 13:54:20,388 - __main__ - INFO - Loop 34 done
+2025-04-03 13:54:30,235 - __main__ - INFO - Starting loop 35
+2025-04-03 13:54:30,390 - __main__ - INFO - Loop 35 done
+2025-04-03 13:54:40,235 - __main__ - INFO - Starting loop 36
+2025-04-03 13:54:40,438 - __main__ - INFO - Loop 36 done
+2025-04-03 13:54:50,236 - __main__ - INFO - Starting loop 37
+2025-04-03 13:54:50,391 - __main__ - INFO - Loop 37 done
+2025-04-03 13:55:00,236 - __main__ - INFO - Starting loop 38
+2025-04-03 13:55:00,236 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:55:00,390 - __main__ - INFO - Loop 38 done
+2025-04-03 13:55:10,236 - __main__ - INFO - Starting loop 39
+2025-04-03 13:55:10,440 - __main__ - INFO - Loop 39 done
+2025-04-03 13:55:20,236 - __main__ - INFO - Starting loop 40
+2025-04-03 13:55:20,391 - __main__ - INFO - Loop 40 done
+2025-04-03 13:55:30,236 - __main__ - INFO - Starting loop 41
+2025-04-03 13:55:30,391 - __main__ - INFO - Loop 41 done
+2025-04-03 13:55:40,236 - __main__ - INFO - Starting loop 42
+2025-04-03 13:55:40,445 - __main__ - INFO - Loop 42 done
+2025-04-03 13:55:50,236 - __main__ - INFO - Starting loop 43
+2025-04-03 13:55:50,388 - __main__ - INFO - Loop 43 done
+2025-04-03 13:56:00,236 - __main__ - INFO - Starting loop 44
+2025-04-03 13:56:00,237 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:56:00,392 - __main__ - INFO - Loop 44 done
+2025-04-03 13:56:10,237 - __main__ - INFO - Starting loop 45
+2025-04-03 13:56:10,447 - __main__ - INFO - Loop 45 done
+2025-04-03 13:56:20,237 - __main__ - INFO - Starting loop 46
+2025-04-03 13:56:20,391 - __main__ - INFO - Loop 46 done
+2025-04-03 13:56:30,237 - __main__ - INFO - Starting loop 47
+2025-04-03 13:56:30,388 - __main__ - INFO - Loop 47 done
+2025-04-03 13:56:40,237 - __main__ - INFO - Starting loop 48
+2025-04-03 13:56:40,453 - __main__ - INFO - Loop 48 done
+2025-04-03 13:56:50,237 - __main__ - INFO - Starting loop 49
+2025-04-03 13:56:50,392 - __main__ - INFO - Loop 49 done
