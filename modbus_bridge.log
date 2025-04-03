@@ -597,3 +597,49 @@ TypeError: ModbusClientMixin.read_holding_registers() got an unexpected keyword 
 2025-04-03 13:09:49,516 - __main__ - INFO - Shutting down services...
 2025-04-03 13:09:49,516 - __main__ - INFO - Modbus connection closed
 2025-04-03 13:09:49,516 - __main__ - ERROR - Error closing MQTT connection: ModbusMQTTBridge._on_mqtt_disconnect() takes 4 positional arguments but 5 were given
+2025-04-03 13:44:38,467 - __main__ - INFO - Connected to Modbus device at 192.168.1.100:502
+2025-04-03 13:44:38,467 - __main__ - INFO - Attempting to connect to MQTT broker at 35.169.3.101:1884
+2025-04-03 13:44:38,614 - __main__ - INFO - MQTT connection initiated
+2025-04-03 13:44:38,615 - __main__ - INFO - Starting loop 1
+2025-04-03 13:44:38,615 - __main__ - INFO - Attempting to reconnect to MQTT broker...
+2025-04-03 13:44:38,786 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: False
+2025-04-03 13:44:38,805 - __main__ - WARNING - MQTT client not connected, cannot publish
+2025-04-03 13:44:38,805 - __main__ - INFO - Loop 1 done
+2025-04-03 13:44:38,923 - __main__ - INFO - Connected to MQTT broker at 35.169.3.101:1884
+2025-04-03 13:44:48,615 - __main__ - INFO - Starting loop 2
+2025-04-03 13:44:48,771 - __main__ - INFO - Loop 2 done
+2025-04-03 13:44:58,615 - __main__ - INFO - Starting loop 3
+2025-04-03 13:44:58,905 - __main__ - INFO - Loop 3 done
+2025-04-03 13:45:08,615 - __main__ - INFO - Starting loop 4
+2025-04-03 13:45:08,824 - __main__ - INFO - Loop 4 done
+2025-04-03 13:45:18,615 - __main__ - INFO - Starting loop 5
+2025-04-03 13:45:18,771 - __main__ - INFO - Loop 5 done
+2025-04-03 13:45:28,616 - __main__ - INFO - Starting loop 6
+2025-04-03 13:45:28,908 - __main__ - INFO - Loop 6 done
+2025-04-03 13:45:38,616 - __main__ - INFO - Starting loop 7
+2025-04-03 13:45:38,825 - __main__ - INFO - Loop 7 done
+2025-04-03 13:45:48,616 - __main__ - INFO - Starting loop 8
+2025-04-03 13:45:48,616 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:45:48,773 - __main__ - INFO - Loop 8 done
+2025-04-03 13:45:58,616 - __main__ - INFO - Starting loop 9
+2025-04-03 13:45:58,911 - __main__ - INFO - Loop 9 done
+2025-04-03 13:46:08,616 - __main__ - INFO - Starting loop 10
+2025-04-03 13:46:08,796 - __main__ - INFO - Loop 10 done
+2025-04-03 13:46:18,616 - __main__ - INFO - Starting loop 11
+2025-04-03 13:46:18,760 - __main__ - INFO - Loop 11 done
+2025-04-03 13:46:28,616 - __main__ - INFO - Starting loop 12
+2025-04-03 13:46:28,915 - __main__ - INFO - Loop 12 done
+2025-04-03 13:46:38,616 - __main__ - INFO - Starting loop 13
+2025-04-03 13:46:38,799 - __main__ - INFO - Loop 13 done
+2025-04-03 13:46:48,617 - __main__ - INFO - Starting loop 14
+2025-04-03 13:46:48,617 - __main__ - INFO - Health check: Modbus connected: True, MQTT connected: True
+2025-04-03 13:46:48,775 - __main__ - INFO - Loop 14 done
+2025-04-03 13:46:58,617 - __main__ - INFO - Starting loop 15
+2025-04-03 13:46:58,916 - __main__ - INFO - Loop 15 done
+2025-04-03 13:47:08,617 - __main__ - INFO - Starting loop 16
+2025-04-03 13:47:08,803 - __main__ - INFO - Loop 16 done
+2025-04-03 13:47:15,538 - __main__ - INFO - Received signal 2, shutting down...
+2025-04-03 13:47:18,617 - __main__ - INFO - Shutting down services...
+2025-04-03 13:47:18,618 - __main__ - INFO - Modbus connection closed
+2025-04-03 13:47:18,813 - __main__ - INFO - Disconnected from MQTT broker (clean)
+2025-04-03 13:47:18,813 - __main__ - INFO - MQTT connection closed
