@@ -1,33 +1,22 @@
-#!/usr/bin/env python3
-from pymodbus.server.asynchronous import StartTcpServer
-from pymodbus.device import ModbusDeviceIdentification
+from pymodbus.server.sync import StartTcpServer
 from pymodbus.datastore import ModbusSequentialDataBlock, ModbusSlaveContext, ModbusServerContext
-from pymodbus.transaction import ModbusTcpServer
-from twisted.internet import reactor
-import logging
-
-logging.basicConfig(level=logging.INFO)
 
 def run_modbus_server():
+    # Initialize test data for holding registers
+    # Structure: [Temperature, Voltage, Power_High, Power_Low]
+    test_values = [
+        253,    # 40001 -> 25.3°C (253 * 0.1)
+        23245,  # 40002 -> 232.45V (23245 * 0.01)
+        0,      # 40003 (high word for 32-bit value)
+        4127    # 40004 (low word for 32-bit value) -> 4.127kW (4127 * 0.001)
+    ]
+    
     store = ModbusSlaveContext(
-        di=ModbusSequentialDataBlock(0, [0] * 100),
-        co=ModbusSequentialDataBlock(0, [0] * 100),
-        hr=ModbusSequentialDataBlock(40001, [253, 23245, 4127, 0, 0]), # initial values for registers
-        ir=ModbusSequentialDataBlock(0, [0] * 100)
+        hr=ModbusSequentialDataBlock(0, test_values)
     )
-
     context = ModbusServerContext(slaves=store, single=True)
-
-    identity = ModbusDeviceIdentification()
-    identity.VendorName = 'pymodbus'
-    identity.ProductCode = 'PM'
-    identity.VendorUrl = 'http://github.com/riptideio/pymodbus/'
-    identity.ProductName = 'pymodbus Server'
-    identity.ModelName = 'pymodbus Server'
-    identity.MajorMinorRevision = '1.0'
-
-    StartTcpServer(context, identity=identity, address=("0.0.0.0", 502)) # Listen on all interfaces.
-    reactor.run()
+    StartTcpServer(context, address=("0.0.0.0", 502))
 
 if __name__ == "__main__":
+    print("Starting Modbus TCP Server at 0.0.0.0:502")
     run_modbus_server()

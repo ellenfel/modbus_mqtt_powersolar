@@ -1,6 +1,32 @@
 {
-  "timestamp": 1743640915.0606093,
-  "datetime": "2025-04-03 03:41:55",
+  "timestamp": 1743674979.516804,
+  "datetime": "2025-04-03 13:09:39",
   "loop_count": 3,
-  "data": {}
+  "data": {
+    "Temperature": {
+      "value": "error",
+      "unit": "\u00b0C",
+      "address": 40001
+    },
+    "Voltage": {
+      "value": "error",
+      "unit": "V",
+      "address": 40002
+    },
+    "Power": {
+      "value": "error",
+      "unit": "kW",
+      "address": 40003
+    },
+    "Current": {
+      "value": "error",
+      "unit": "A",
+      "address": 40005
+    },
+    "Energy": {
+      "value": "error",
+      "unit": "kWh",
+      "address": 40006
+    }
+  }
 }

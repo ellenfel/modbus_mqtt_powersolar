@@ -73,7 +73,11 @@ class ModbusMQTTBridge:
     def __init__(self, config: AppConfig):
         self.config = config
         self._modbus_client: Optional[ModbusTcpClient] = None
-        self._mqtt_client = mqtt.Client(client_id=config.mqtt.client_id, protocol=mqtt.MQTTv311)
+        
+        # Update MQTT client initialization to use the latest API
+        self._mqtt_client = mqtt.Client(client_id=config.mqtt.client_id, 
+                                    protocol=mqtt.MQTTv5)  # Use MQTTv5 instead of MQTTv311
+        
         self._running = False
         self._last_reconnect_attempt = 0
         self._last_health_check = 0
@@ -199,15 +203,18 @@ class ModbusMQTTBridge:
 
         for reg in self.config.registers:
             try:
+                # Set the slave ID before reading
+                self._modbus_client.unit_id = self.config.modbus.unit_id
+                
                 response = self._modbus_client.read_holding_registers(
                     reg.address,
-                    count=reg.count,
-                    unit=self.config.modbus.unit_id
+                    count=reg.count
+                    # Remove 'unit' parameter
                 )
                 
                 if response.isError():
                     logger.warning("Error response reading %s (address %d): %s", 
-                                 reg.name, reg.address, response)
+                                reg.name, reg.address, response)
                     value = "error"
                 else:
                     value = self._process_register_value(reg, response.registers)
@@ -220,7 +227,7 @@ class ModbusMQTTBridge:
                 
             except ModbusException as e:
                 logger.error("Modbus error reading %s (address %d): %s", 
-                           reg.name, reg.address, e)
+                        reg.name, reg.address, e)
                 results["data"][reg.name] = {
                     "value": "error",
                     "unit": reg.unit,
@@ -229,7 +236,7 @@ class ModbusMQTTBridge:
                 }
             except Exception as e:
                 logger.exception("Unexpected error reading %s (address %d)", 
-                               reg.name, reg.address)
+                            reg.name, reg.address)
                 results["data"][reg.name] = {
                     "value": "error",
                     "unit": reg.unit,
@@ -337,14 +344,24 @@ class ModbusMQTTBridge:
 
         try:
             # Connect to MQTT broker
+
+
+            # Replace the MQTT connection code in the run method
             try:
-                self._mqtt_client.connect_async(
+                logger.info("Attempting to connect to MQTT broker at %s:%d", 
+                        self.config.mqtt.broker, self.config.mqtt.port)
+                self._mqtt_client.connect(  # Use synchronous connect instead of connect_async
                     self.config.mqtt.broker,
-                    port=self.config.mqtt.port
+                    port=self.config.mqtt.port,
+                    keepalive=60  # Add keepalive parameter
                 )
                 self._mqtt_client.loop_start()
+                logger.info("MQTT connection established")
             except Exception as e:
                 logger.error("Initial MQTT connection failed: %s", e)
+
+
+
 
             while self._running:
                 start_time = time.monotonic()
