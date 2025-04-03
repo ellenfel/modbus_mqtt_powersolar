@@ -1,0 +1,32 @@
+2025-04-03 03:41:31,053 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:31,053 - __main__ - ERROR - Failed to connect to Modbus device (attempt 1/3)
+2025-04-03 03:41:33,055 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:33,055 - __main__ - ERROR - Failed to connect to Modbus device (attempt 2/3)
+2025-04-03 03:41:35,057 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:35,057 - __main__ - ERROR - Failed to connect to Modbus device (attempt 3/3)
+2025-04-03 03:41:35,058 - __main__ - WARNING - Initial Modbus connection failed, will retry in loop
+2025-04-03 03:41:35,059 - __main__ - INFO - Starting loop 1
+2025-04-03 03:41:35,060 - __main__ - INFO - Attempting to reconnect to Modbus...
+2025-04-03 03:41:35,062 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:35,062 - __main__ - ERROR - Failed to connect to Modbus device (attempt 1/3)
+2025-04-03 03:41:37,064 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:37,065 - __main__ - ERROR - Failed to connect to Modbus device (attempt 2/3)
+2025-04-03 03:41:39,066 - pymodbus.logging - ERROR - Connection to (192.168.1.100, 502) failed: [Errno 111] Connection refused
+2025-04-03 03:41:39,067 - __main__ - ERROR - Failed to connect to Modbus device (attempt 3/3)
+2025-04-03 03:41:39,067 - __main__ - INFO - Attempting to reconnect to MQTT broker...
+2025-04-03 03:41:42,136 - __main__ - ERROR - MQTT reconnection failed: [Errno 113] No route to host
+2025-04-03 03:41:42,137 - __main__ - INFO - Health check: Modbus connected: False, MQTT connected: False
+2025-04-03 03:41:42,143 - __main__ - ERROR - Modbus client not connected
+2025-04-03 03:41:42,144 - __main__ - WARNING - MQTT client not connected, cannot publish
+2025-04-03 03:41:42,144 - __main__ - INFO - Loop 1 done
+2025-04-03 03:41:45,059 - __main__ - INFO - Starting loop 2
+2025-04-03 03:41:45,060 - __main__ - ERROR - Modbus client not connected
+2025-04-03 03:41:45,061 - __main__ - WARNING - MQTT client not connected, cannot publish
+2025-04-03 03:41:45,062 - __main__ - INFO - Loop 2 done
+2025-04-03 03:41:55,060 - __main__ - INFO - Starting loop 3
+2025-04-03 03:41:55,060 - __main__ - ERROR - Modbus client not connected
+2025-04-03 03:41:55,061 - __main__ - WARNING - MQTT client not connected, cannot publish
+2025-04-03 03:41:55,062 - __main__ - INFO - Loop 3 done
+2025-04-03 03:41:59,666 - __main__ - INFO - Received signal 2, shutting down...
+2025-04-03 03:42:05,060 - __main__ - INFO - Shutting down services...
+2025-04-03 03:42:05,313 - __main__ - INFO - MQTT connection closed

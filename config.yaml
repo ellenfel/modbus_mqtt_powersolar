@@ -1,0 +1,76 @@
+# ModbusMQTTBridge Configuration
+# config.yaml
+
+# Modbus Connection Settings
+modbus:
+  host: "192.168.1.100"  # IP address of the Modbus device
+  port: 502              # Default Modbus TCP port
+  unit_id: 1             # Modbus unit/slave ID
+  timeout: 5             # Connection timeout in seconds
+  retries: 3             # Number of connection retry attempts
+  retry_delay: 2         # Delay between retries in seconds
+
+# MQTT Connection Settings
+mqtt:
+  broker: "192.168.1.200"  # IP address of the MQTT broker
+  port: 1883               # Default MQTT port
+  topic: "device/modbus"   # Topic to publish data
+  qos: 1                   # Quality of Service (0, 1, or 2)
+  retain: false            # Whether to retain messages on the broker
+  client_id: "modbus-bridge-1"  # Client ID (leave empty for auto-generated)
+  username: "mqtt_user"    # MQTT username (optional)
+  password: "mqtt_pass"    # MQTT password (optional)
+  tls: false               # Whether to use TLS/SSL
+
+# Register Definitions
+registers:
+  # Temperature sensor at register 40001
+  - name: "Temperature"
+    address: 40001
+    count: 1
+    scale: 0.1
+    unit: "°C"
+    data_type: "int16"
+    byte_order: "big"
+  
+  # Voltage measurement at register 40002
+  - name: "Voltage"
+    address: 40002
+    count: 1
+    scale: 0.01
+    unit: "V"
+    data_type: "int16"
+    byte_order: "big"
+  
+  # Power measurement (32-bit value across two registers)
+  - name: "Power"
+    address: 40003
+    count: 2
+    scale: 0.001
+    unit: "kW"
+    data_type: "int32"
+    byte_order: "big"
+    
+  # Current measurement
+  - name: "Current"
+    address: 40005
+    count: 1
+    scale: 0.1
+    unit: "A"
+    data_type: "uint16"
+    byte_order: "big"
+    
+  # Energy counter (32-bit float value)
+  - name: "Energy"
+    address: 40006
+    count: 2
+    scale: 1.0
+    unit: "kWh"
+    data_type: "float32"
+    byte_order: "big"
+
+# Application Settings
+loop_interval: 10            # Time between data readings in seconds
+reconnect_interval: 30       # Time between reconnection attempts in seconds
+health_check_interval: 60    # Time between health checks in seconds
+json_file: "modbus_data.json"  # File to store the latest readings
