@@ -1,0 +1,27 @@
+# Byte-compiled files
+**/__pycache__/
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore API key backups or sensitive files
+src/config/settings.py.bak
+
+# Ignore environment variables and sensitive files
+src/config/settings.py
+
+# Ignore all __init__.py files
+__init__.py
+**/__init__.py
