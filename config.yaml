@@ -12,17 +12,17 @@ modbus:
 
 # MQTT Connection Settings
 mqtt:
-  broker: "35.169.3.101"  # IP address of the MQTT broker
-  port: 1884               #MQTT port
-  topic: "device/modbus"   # Topic to publish data
-  qos: 1                   # Quality of Service (0, 1, or 2)
-  retain: false            # Whether to retain messages on the broker
-  client_id: "modbus-bridge-1"  # Client ID (leave empty for auto-generated)
-  username: "mqtt_user"    # MQTT username (optional)
-  password: "mqtt_pass"    # MQTT password (optional)
-  tls: false               # Whether to use TLS/SSL
+  broker: "35.169.3.101" 
+  port: 1884             
+  topic: "device/modbus" 
+  qos: 1                 
+  retain: false          
+  client_id: "modbus-bridge-1"
+  username: "mqtt_user"  
+  password: "mqtt_pass"  
+  tls: false             
 
-# Register Definitions
+# Register Definitions - Only include registers that actually exist on server
 registers:
   # Temperature sensor at register 40001
   - name: "Temperature"
@@ -50,27 +50,9 @@ registers:
     unit: "kW"
     data_type: "int32"
     byte_order: "big"
-    
-  # Current measurement
-  - name: "Current"
-    address: 40005
-    count: 1
-    scale: 0.1
-    unit: "A"
-    data_type: "uint16"
-    byte_order: "big"
-    
-  # Energy counter (32-bit float value)
-  - name: "Energy"
-    address: 40006
-    count: 2
-    scale: 1.0
-    unit: "kWh"
-    data_type: "float32"
-    byte_order: "big"
 
 # Application Settings
-loop_interval: 10            # Time between data readings in seconds
-reconnect_interval: 30       # Time between reconnection attempts in seconds
-health_check_interval: 60    # Time between health checks in seconds
-json_file: "modbus_data.json"  # File to store the latest readings
+loop_interval: 10          
+reconnect_interval: 30     
+health_check_interval: 60  
+json_file: "modbus_data.json"

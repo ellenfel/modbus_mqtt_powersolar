@@ -207,12 +207,14 @@ class ModbusMQTTBridge:
 
         for reg in self.config.registers:
             try:
-                # Set the slave ID before reading
+                # Set the slave ID explicitly
                 self._modbus_client.unit_id = self.config.modbus.unit_id
                 
-                # Debug log the actual address being used
-                logger.debug("Reading register %s at address %d (original address %d)", 
-                           reg.name, reg.address, reg.address + 40001)
+                # Log detailed register info
+                logger.debug(
+                    "Reading %s (address %d, count=%d) from unit %d",
+                    reg.name, reg.address, reg.count, self.config.modbus.unit_id
+                )
                 
                 response = self._modbus_client.read_holding_registers(
                     reg.address,
@@ -220,8 +222,10 @@ class ModbusMQTTBridge:
                 )
                 
                 if response.isError():
-                    logger.warning("Error response reading %s (address %d): %s", 
-                                reg.name, reg.address + 40001, response)
+                    logger.warning(
+                        "Error response reading %s (address %d): %s", 
+                        reg.name, reg.address + 40001, response
+                    )
                     value = "error"
                 else:
                     value = self._process_register_value(reg, response.registers)
@@ -229,12 +233,14 @@ class ModbusMQTTBridge:
                 results["data"][reg.name] = {
                     "value": value,
                     "unit": reg.unit,
-                    "address": reg.address + 40001  # Convert back to user-friendly address for logging
+                    "address": reg.address + 40001
                 }
                 
             except ModbusException as e:
-                logger.error("Modbus error reading %s (address %d): %s", 
-                        reg.name, reg.address + 40001, e)
+                logger.error(
+                    "Modbus error reading %s (address %d): %s", 
+                    reg.name, reg.address + 40001, e
+                )
                 results["data"][reg.name] = {
                     "value": "error",
                     "unit": reg.unit,
@@ -242,8 +248,10 @@ class ModbusMQTTBridge:
                     "error": str(e)
                 }
             except Exception as e:
-                logger.exception("Unexpected error reading %s (address %d)", 
-                            reg.name, reg.address + 40001)
+                logger.exception(
+                    "Unexpected error reading %s (address %d)", 
+                    reg.name, reg.address + 40001
+                )
                 results["data"][reg.name] = {
                     "value": "error",
                     "unit": reg.unit,
