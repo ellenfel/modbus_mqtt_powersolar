@@ -1,0 +1,155 @@
+# ModbusMQTTBridge Configuration for Testing with Simulator
+# test_config.yaml
+
+# Modbus Connection Settings - Change the IP to your embedded device's IP
+modbus:
+  host: "192.168.1.100"  # IP of your embedded device running the simulator
+  port: 502              # Default Modbus TCP port
+  unit_id: 1             # Slave ID
+  timeout: 5             # Connection timeout in seconds
+  retries: 3             # Number of connection retry attempts
+  retry_delay: 2         # Delay between retries in seconds
+
+# MQTT Connection Settings
+mqtt:
+  broker: "35.169.3.101" # Your MQTT broker IP/hostname
+  port: 1884             # MQTT port
+  topic: "inverter/test" # Test topic
+  qos: 1                 
+  retain: false          
+  client_id: "modbus-test-client"
+  username: "mqtt_user"  # Your MQTT credentials
+  password: "mqtt_pass"  
+  tls: false             
+
+# Register Definitions - These match the simulator's register layout
+registers:
+  # SINGLE REGISTER VALUES (16-BIT) - Input Registers
+  - name: "DC_Voltage"
+    address: 30001  # Register from simulator
+    count: 1
+    scale: 0.1
+    unit: "V"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "DC_Current"
+    address: 30003
+    count: 1
+    scale: 0.1
+    unit: "A"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "AC_Voltage"
+    address: 30071
+    count: 1
+    scale: 0.1
+    unit: "V"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "AC_Current"
+    address: 30073
+    count: 1
+    scale: 0.1
+    unit: "A"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "AC_Frequency"
+    address: 30075
+    count: 1
+    scale: 0.01
+    unit: "Hz"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "Inverter_Status"
+    address: 30201
+    count: 1
+    scale: 1
+    unit: ""
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "Temperature"
+    address: 30231
+    count: 1
+    scale: 0.1
+    unit: "°C"
+    data_type: "int16"
+    byte_order: "big"
+  
+  # 32-BIT VALUES - Multiple formats for comparison
+  - name: "Power_int32_big"
+    address: 30775
+    count: 2
+    scale: 1
+    unit: "W"
+    data_type: "int32"
+    byte_order: "big"
+  
+  - name: "Power_int32_little"
+    address: 30777  # Using separate registers in simulator for testing
+    count: 2
+    scale: 1
+    unit: "W"
+    data_type: "int32"
+    byte_order: "little"
+  
+  - name: "Power_float32_big"
+    address: 30779
+    count: 2
+    scale: 1
+    unit: "W"
+    data_type: "float32"
+    byte_order: "big"
+  
+  - name: "Power_float32_little"
+    address: 30781
+    count: 2
+    scale: 1
+    unit: "W"
+    data_type: "float32"
+    byte_order: "little"
+  
+  # Energy value
+  - name: "Total_Energy"
+    address: 30513
+    count: 2
+    scale: 0.1
+    unit: "kWh"
+    data_type: "uint32"
+    byte_order: "big"
+  
+  # HOLDING REGISTERS - Test the same values in holding registers
+  - name: "HR_DC_Voltage"
+    address: 40001
+    count: 1
+    scale: 0.1
+    unit: "V"
+    data_type: "uint16"
+    byte_order: "big"
+  
+  - name: "HR_Total_Power"
+    address: 40775
+    count: 2
+    scale: 1
+    unit: "W"
+    data_type: "int32"
+    byte_order: "big"
+  
+  - name: "HR_Total_Energy"
+    address: 40513
+    count: 2
+    scale: 0.1
+    unit: "kWh"
+    data_type: "uint32"
+    byte_order: "big"
+
+# Application Settings
+loop_interval: 5            # For testing, run frequently
+reconnect_interval: 15      # Reconnect frequently during testing
+health_check_interval: 30   # Check health frequently during testing
+json_file: "test_data.json"
